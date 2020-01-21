@@ -1,0 +1,19 @@
+.header
+  .header__left
+    .header__left--logout
+      ログアウト
+      = link_to '#' do
+        = icon('fas','sign-out-alt')
+    .header__left--chat
+      チャット
+      = link_to '#' do
+        = icon('fas','comment-alt')
+    .header__left--edit
+      編集
+      = link_to '#' do
+        = icon('fas','edit')
+  .header__right
+    .header__right--user
+    = link_to '#' do
+      = icon('fas','smile')
+    user_name
