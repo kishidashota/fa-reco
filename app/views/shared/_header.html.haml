@@ -1,0 +1,35 @@
+.header
+  .header__left
+    - if user_signed_in?
+      .header__left--logout
+        ログアウト
+        = link_to destroy_user_session_path, method: :delete do
+          = icon('fas','sign-out-alt')
+      .header__left--chat
+        バイヤー
+        = link_to messages_path do 
+          = icon('fas','comment-alt')
+      
+      .header__right
+
+        .header__right--user
+          = link_to new_user_path do
+            = icon('fas','smile')
+            user_name
+    - else
+      .header__left--logout
+
+      .header__left--chat
+        ログイン
+        = link_to new_user_session_path do
+          = icon('fas','sign-in-alt')
+      .header__left--chat
+        新規登録
+        = link_to new_user_registration_path do 
+          = icon('fas','comment-alt')
+    
+  
+
+
+
+     
