@@ -7,7 +7,12 @@
       .list__contents--name
       バイヤーの名前
       .list__contensts--brand
-      ブランド名orショップ名
+      = link_to new_message_path do
+        = icon('fas','paw')
+      チャットする
+      = link_to new_product_path do
+        = icon('fas','shopping-cart')
+      オンラインストア
   .list
     .list__icon
     = link_to '#' do
@@ -16,4 +21,9 @@
       .list__contents--name
       バイヤーの名前
       .list__contensts--brand
-      ブランド名orショップ名
+      = link_to '#' do
+        = icon('fas','paw')
+      チャットする
+      = link_to new_product_path do
+        = icon('fas','shopping-cart')
+      オンラインストア

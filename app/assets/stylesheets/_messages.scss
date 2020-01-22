@@ -33,10 +33,12 @@
       position: absolute;
       top: 0;
       right: 0;
+      font-size:18px;
       
       
 
       &--user{
+        
      
       }
     }
@@ -62,9 +64,11 @@
         
 
         &__name{
-
+        
         }
         &__brand{
+        
+      
 
         }
      
@@ -93,7 +97,6 @@
 
       &__date{
       font-size: 12px;
-      display: inline-block;
 
       }
       &__content{

@@ -6,11 +6,11 @@
 |icon|string|null:false|
 |address|string|null:false|
 |email|string|null:false,unique: true|
-|favorite brand|string|null: false|
-|favorite clothes lineage|string|null: false|
-|Photos of clothes in possession|string|null: false|
-|items you want|string|null: false|
-|price cap|integer|null: false|
+|favorite_brand|string|null: false|
+|favorite_clothes_lineage|string|null: false|
+|Photos_of_clothes_in_possession|string|null: false|
+|items_you_want|string|null: false|
+|price_cap|integer|null: false|
 ### Association
 - has_many :messages
 - has_many :buyers
