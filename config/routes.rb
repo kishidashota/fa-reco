@@ -1,16 +1,9 @@
 Rails.application.routes.draw do
-
-
-  devise_for :users, controllers: {registrations: 'users/registrations' }
-  root to: 'users#index'
   resources :products
-  resources :users, only: [:index, :edit, :new, :update, :show]
+  devise_for :users
+  
+  
+  root to: 'users#index'
+  resources :users, only: [:index, :edit, :new, :update]
     resources :messages, only: [:index, :create, :new, ]
-
- 
-  
-  
-  
-  
-  
 end
