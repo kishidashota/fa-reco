@@ -1,3 +1,16 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+
+  devise_for :users, controllers: {registrations: 'users/registrations' }
+  root to: 'users#index'
+  resources :products
+  resources :users, only: [:index, :edit, :new, :update, :show]
+    resources :messages, only: [:index, :create, :new, ]
+
+ 
+  
+  
+  
+  
+  
 end

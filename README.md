@@ -1,24 +1,111 @@
-# README
+## README
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, add_index: true|
+|icon|string|null:false|
+|address|string|null:false|
+|email|string|null:false,unique: true|
+|favorite_brand|string|null: false|
+|favorite_clothes_lineage|string|null: false|
+|Photos_of_clothes_in_possession|string|null: false|
+|items_you_want|string|null: false|
+|price_cap|integer|null: false|
+### Association
+- has_many :messages
+- has_many :buyers
+- has_many :orders
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## buyersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|store name|string|null: false|
+|icon|image|null: false|
+|email|string|null:false,unique: true|
 
-Things you may want to cover:
+### Association
+- has_many :messages
+- has_many :users
+- has_many :products
 
-* Ruby version
+## messageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|contents|text|null: false|
+|image|string||
+|user_id|integer|null: false, foreign_key: true|
+|buyer_id|integer|null: false,foreign_key: true|
 
-* System dependencies
+### Association
+- belongs_to :user
+- belongs_to :buyer
 
-* Configuration
 
-* Database creation
 
-* Database initialization
+## ordersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|image|string|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- has_many :products_orders
 
-* Deployment instructions
+## productsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|buyer_id||||
+|product_id|||
+|image|string|null: false, foreign_key: true|
+|name|integer|null: false, foreign_key: true|
+|price|integer|null: false, foreign_key: true|
+|description|string|null: false, foreign_key: true|
 
-* ...
+
+### Association
+- has_many :orders
+- has_many :products_tags
+- has_many :tags, through : :products_tags
+- belongs_to :buyer
+
+
+## products_orderテーブル
+|Column|Type|Options|
+|------|----|-------|
+|order_id|integer|null: false, foreign_key: true|
+|product_id|integer|null: false, foreign_key: true|
+|total price|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :order
+- belongs_to :product
+
+
+
+
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+
+
+### Association
+- has_many :products_tags
+- has_many  :products,  through:  :products_tags
+
+
+
+## products_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|buyer_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+
+### Association
+- belongs_to :product
+- belongs_to :tag                                                                                                                          
+
+
