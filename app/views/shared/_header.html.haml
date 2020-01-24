@@ -13,9 +13,9 @@
       .header__right
 
         .header__right--user
-          = link_to user_path(current_user.id) do
+          = link_to new_user_path do
             = icon('fas','smile')
-            = current_user.username
+            user_name
     - else
       .header__left--logout
 
