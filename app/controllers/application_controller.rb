@@ -1,21 +1,26 @@
 class ApplicationController < ActionController::Base
-  # ログイン済ユーザーのみにアクセスを許可する
-  before_action :authenticate_user!
-
-   # deviseコントローラーにストロングパラメータを追加する  
-  before_action :configure_permitted_parameters, if: :devise_controller?
- 
-
   
+  #このコードがあると、Railsで生成されるすべてのフォームとAjaxリクエストにセキュリティトークンが自動的に含まれる。セキュリティトークンがマッチしない場合には例外がスローされる。
+  before_action :configure_permitted_parameters, if: :devise_controller?# deviseコントローラーにストロングパラメータを追加する    
   protected
 
   def configure_permitted_parameters
-    added_attrs = [ :email, :username, :password, :password_confirmation, :profile]
-    # サインアップ時にnameのストロングパラメータを追加
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+    
+  
+    if resource_class == User
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :profile])
+    elsif resource_class == Shop
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :genre])
+    else
+      super
+    end
     # アカウント編集の時にnameとprofileのストロングパラメータを追加
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :profile])
   end
+  # def current_shop
+  #   return unless session[:shop_id]
+  #   @current_shop ||= Shop.find(session[:shop_id])
+  # end
 end
 
 

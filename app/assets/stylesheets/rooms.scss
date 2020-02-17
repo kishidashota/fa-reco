@@ -1,0 +1,51 @@
+.wrapper{
+  background-color: #7494c0; ;
+  .header{
+  }
+  .main{
+    margin:0 auto;
+    background-color :#8de055; 
+    width:80%;
+    height:80%;
+    .chat-field{
+       position: relative;
+      .left-message{
+        text-align: left;
+        padding:0;
+        background: black;
+        overflow: hidden;
+        border-radius:5px ;
+        margin: 20px auto;
+        font-size: 80%;
+      }
+      .right-message{
+        text-align: right;
+        padding:0;
+        background: black;
+        overflow: hidden;
+        margin: 20px auto;
+        font-size: 80%;
+        border-radius:5px ;
+      }
+    }
+  }
+    .footer{
+      width:100%;
+      height:50px;
+      background-color:rgb(238, 238, 124);
+      position: fixed;
+      bottom:0;
+      left: 0px;
+     
+      .text_field{
+        width:80%;
+        margin :10px;
+
+      }
+      .form__submit{
+      width: 15%;
+      background-color:#f4f4f4 ;
+      cursor:pointer
+      }
+  }
+}
