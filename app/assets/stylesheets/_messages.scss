@@ -3,28 +3,14 @@
   height: 100vh;
   .header{
     height: 45px;
-    border-bottom:10px solid #73ff00;
-    background-color: #c8ff00;
-   
-    position: relative;
-    line-height: 55px;
-    
-    
-    &__left{
-    
+    border-bottom:10px solid #67bdac;
+    background-color: #98FB98;       
+    position: relative;                
+    line-height: 55px;                 
+    &__left{                           
     display: flex;
     justify-content:flex-start;
-
-  
-      &--logout{
-        margin-right: 5px;
-        margin-left: 7px;
-      }
-      &--chat{
-        margin-right: 5px;
-        margin-left: 7px;
-      }
-      &--edit{
+      &--icon{
         margin-right: 5px;
         margin-left: 7px;
       }
@@ -34,12 +20,7 @@
       top: 0;
       right: 0;
       font-size:18px;
-      
-      
-
       &--user{
-        
-     
       }
     }
   }
@@ -48,7 +29,6 @@
     width: 20%;
     background-color: rgb(234, 0, 255);
     float: left;
-
     .list{
       padding: 10px;
       margin: 10px;
@@ -56,22 +36,13 @@
       height: 100px;
       width: 80%;
       background-color: #fafafa;
-      
       &__icon{
-
       }
       &__contents{
-        
-
         &__name{
-        
         }
         &__brand{
-        
-      
-
         }
-     
       }
     
     }
@@ -108,7 +79,8 @@
       box-sizing: border-box;
       height: 90px;
       padding: 20px 50px 20px 40px;
-      width: 80%;
+      width:80%;
+      position: absolute;
       position: absolute;/*←絶対位置*/
       bottom: 0; /*下に固定*/
       &__message {
@@ -131,17 +103,16 @@
         }
       }
       &__submit {
-        background-color: #ffffff;
+        background-color: #67bdac;
         border: none;
-        color: black;
+        color: #ffffff;
         float: right;
         font-size: 16px;
         height: 50px;
         margin-left: 15px;
         padding: 0 30px;
-        
       }
     }
-  }
   
+}
 }

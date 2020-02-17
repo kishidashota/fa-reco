@@ -1,0 +1,44 @@
+.wrapper
+  .header
+    ショップ名
+    .header__left  
+  .main
+    - if user_signed_in?
+      %h3
+        - @shop.name
+        ユーザー側
+      .chat-field
+        - @messages.each do |m|
+          / メッセージがUserによるものだったら
+          - if m.is_user
+            / メッセージを右に寄せる
+            .right-message
+              = m.content
+            / メッセージがShopによるものだったら
+          - else
+            / メッセージを左に寄せる
+            .left-message
+              = m.content
+    - elsif shop_signed_in?
+      %h3
+        - @user.username
+        ショップ側
+      .chat-field
+        - @messages.each do |m|
+          / メッセージがUserによるものだったら
+          - if m.is_user
+            / メッセージを左に寄せる
+            .left-message
+              = m.content
+            / メッセージがShopによるものだったら
+          - else
+            / メッセージを右に寄せる
+            .right-message
+              = m.content
+  .footer
+    = form_for [@room, @message] do |f|
+      = f.text_field :content,class:"text_field"
+      = f.submit "SEND",class: "form__submit",id: "new-message"
+
+
+      
