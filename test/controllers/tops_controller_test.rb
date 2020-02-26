@@ -5,5 +5,6 @@ class TopsControllerTest < ActionDispatch::IntegrationTest
     get tops_index_url
     assert_response :success
   end
+  
 
 end

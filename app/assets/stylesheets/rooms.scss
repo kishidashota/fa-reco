@@ -1,27 +1,28 @@
 .wrapper{
-  background-color: #7494c0; ;
+  
   .header{
+
   }
   .main{
     margin:0 auto;
-    background-color :#8de055; 
     width:80%;
     height:80%;
+    color: black;
     .chat-field{
        position: relative;
       .left-message{
+        color: #444;
         text-align: left;
         padding:0;
-        background: black;
         overflow: hidden;
         border-radius:5px ;
         margin: 20px auto;
         font-size: 80%;
       }
       .right-message{
+        color: #444;
         text-align: right;
         padding:0;
-        background: black;
         overflow: hidden;
         margin: 20px auto;
         font-size: 80%;

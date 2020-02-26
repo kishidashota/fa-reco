@@ -1,81 +1,102 @@
 - if user_signed_in?
   .wrapper
-    .header
-      .header__left
+    .topheader
+      .topheader__left
         .list
-        .header__left--logout
-          ログアウト
-          = link_to destroy_user_session_path, method: :delete do
+        .topheader__left--logout
+          = link_to  destroy_user_session_path, method: :delete do
             = icon('fas','sign-out-alt')
-        .header__left--chat
+            Logout
+        .topheader__left--chat
           = form_tag(searches_path,method: :get) do
-            = text_field_tag :search, "",placeholder:"何かお探しですか？"
+            = text_field_tag :search, "",placeholder:"What do you want？",class:'form_tag'
             = submit_tag 'SERARCH', :name => nil
-        .header__right
-          .header__right--user
+        .topheader__right
+          .topheader__right--user
             = link_to user_path(current_user.id) do
               = icon('fas','smile')
               = current_user.username
-    .main
-      %h2 ショップ一覧
-      - @shops.each do |shop|
-        = shop.name
-        / もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成
-        - if @shop_ids.include?(shop.id)
-          %br/
-          = link_to "チャットへ", room_path(current_user.rooms.find_by(shop_id: shop.id))
-          %br/
-        - else
-          = form_for Room.new do |f|
-            = f.hidden_field :shop_id, :value => shop.id
-            = f.submit
-    
+    .main-chat
+      .roomtitle
+        Let's chat & shopping
+      .members
+        - @shops.each do |shop|
+          %ul.profile
+            %img{src: "shop1.png",height:"16%",width:"88%"}
+            %li
+            = shop.name
+            %br
+            %li
+            = shop.genre
+            / もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成
+            - if @shop_ids.include?(shop.id)
+              %br/
+              = link_to "Chat", room_path(current_user.rooms.find_by(shop_id: shop.id)),class:"list"
+              %br/
+            - else
+              = form_for Room.new do |f|
+                = f.hidden_field :shop_id, :value => shop.id
+                = f.submit
 - elsif shop_signed_in?
   .wrapper
-    .header
-      .header__left
-        .header__left--icon
-          ログアウト
-          = link_to destroy_user_session_path, method: :delete do
-            = icon('fas','sign-out-alt')
-        .header__left--icon
-          在庫管理
-          = link_to new_product_path do 
-            = icon('fas','comment-alt')
-        .header__right
-
-          .header__right--user
+    .topheader
+      .topheader__left
+        .topheader__left--logout
+        = link_to destroy_user_session_path, method: :delete do 
+          = icon('fas','sign-out-alt')
+          Logout
+        .topheader__left--icon
+        = link_to new_product_path do          
+          = icon('fas','comment-alt')
+          Products
+        .topheader__right
+          .topheader__right--user
             = link_to shop_path(current_shop.id) do
               = icon('fas','smile')
               = current_shop.name
-    .main
-      %h2 ユーザー一覧
-      - @users.each do |user|
-        = user.username
-        / もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成
-        - if @user_ids.include?(user.id)
-          %br/
-          = link_to "チャットへ", room_path(current_shop.rooms.find_by(user_id: user.id))
-          %br/
-        - else
-          = form_for Room.new do |f|
-            = f.hidden_field :user_id, :value => user.id
-            = f.submit
-      
+    .main-chat
+      .roomtitle
+        Let's recommend & teach your fasshion
+      .members
+        - @users.each do |user|
+          %ul.profile
+            %img{src: "user1.png",height:"16%",width:"88%"}
+            %li
+            = user.username
+            %br
+            %li
+            = user.profile
+            / もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成/
+            - if @user_ids.include?(user.id)
+              %br/
+              = link_to "Chat", room_path(current_shop.rooms.find_by(user_id: user.id))
+              %br/
+            - else
+              = form_for Room.new do |f|
+                = f.hidden_field :user_id, :value => user.id
+                = f.submit
 - else
   .wrapper
     .main-login
     .main-log-text
       .main__box__user
-        %h2 ユーザー
-        = link_to "ログイン", new_user_session_path,{class: "user-log-in"}
+        %h2 User
+        = link_to "Log in", new_user_session_path,{class: "user-log-in"}
 
-        = link_to "新規登録", new_user_registration_path,{class: "user-sign-up"}
+        = link_to "Sign up", new_user_registration_path,{class: "user-sign-up"}
+        .main__box__user__description
+          ファッションのプロ
+          %br
+          に洋服を選んでもらおう
       .main__box__shop
-        %h2 ショップ
-        = link_to "ログイン", new_shop_session_path ,{class: "shop-log-in"}
-                        
-        = link_to "新規登録", new_shop_registration_path ,{class: "shop-sign-up"}
+        %h2 Shop
+        = link_to "Log in", new_shop_session_path ,{class: "shop-log-in"}
+
+        = link_to "Sign up", new_shop_registration_path ,{class: "shop-sign-up"}
+        .main__box__shop__recommend
+          ファッションの極意
+          %br
+          教えてください
 
   
   

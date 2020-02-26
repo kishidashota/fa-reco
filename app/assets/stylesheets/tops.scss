@@ -1,34 +1,23 @@
 .wrapper{
   width:100vw ;
   height: 100vh;
-  background-color: white;
-  .header{
-    height: 45px;
-    font-weight: bold;
-    border-bottom:10px solid ;
-    background-color: #c300ffce;
-    position: relative;
-    line-height: 55px;
-    font-size: 25px;
-    text-align: center;
-  }
   .main-login{
     background-image:image-url("fa-reco.png");
     filter: brightness(100%);
     width: 100vw;
     height: 50vh;
     a:hover {
-      color: red;
+      color: green;
     }
     a{
       transition: 1.0s ;
-      color:#ffffff;
+      color:#444;
       text-decoration: none;
     }
   }
   .main-log-text{
     width: 100vw;
-    height: 46vh;
+    height: 50vh;
     color:white;
     background-color:#67bdac;
     animation: bg-color 10s infinite;
@@ -38,35 +27,34 @@
     color: red;
   }
 a{
-  transition: 1.0s ;
+  transition: 0.8s ;
   color:#ffffff;
   text-decoration: none;
+  margin-right: 5px;
+  margin-left: 7px;
 }
- 
-  
   .main{
-   width: 60%;
+   width: 50%;
    align-items: baseline;
-   background-color:#2F4F4F;
-   color:white;
+   color:#444;
+   
     a:hover {
       color: red;
     }
   a{
-    transition: 1.0s ;
+    transition: 0.8s ;
     color:#ffffff;
     text-decoration: none;
+
   }
     &__box{
       .title{
         font-size: 40px;
       }
-      text-align: center;
-      padding-top: 20px;
-      
       &__user{
+        margin-left: 50px;
         font-size: 25px;
-        margin: 30px;
+        padding:40px;
       .user-log-in{
         padding: 20px;
         font-size: 15px;
@@ -75,10 +63,25 @@ a{
         padding: 20px;
         font-size: 15px;
       }
+      &__description{
+        float: right;
+        color: white;
+        padding-right: 50px;
+      }
       }
       &__shop{
-        margin: 50px;
+        color:#67bdac;
+        margin-left: 100px;
+        padding-top: 30px;
         font-size: 25px;
+        a:hover {
+          color: red;
+        }
+        a{
+          transition: 1.0s ;
+          color:#67bdac;
+          text-decoration: none;
+        }
 
         .shop-log-in{
           padding: 20px;
@@ -88,10 +91,42 @@ a{
           padding: 20px;
           font-size: 15px;
         }
+        &__recommend{
+          float: right;
+          color: #67bdac;
+          padding-right: 30px;
+        }
       }
+     
   }
-   
+}
+.main-chat{
+  width:100%;
+  height:auto;
+  background-color: #f8f8f8;
+  .roomtitle{
+    text-align: center;
+    font-size:20px;
+    line-height:50px;
+    margin: 0 auto;
+  }
+  .members{
+    margin-top:50px;
+    margin-left:200px;
+
+  
+
+    a{
+      animation: color-change 2s linear infinite;
+    }
+  
+
+    .profile{
+      width: 22%;
+      display: inline-block; 
+  }
     
+  }
 
 }
   .side{
@@ -116,8 +151,6 @@ a{
         
         }
         &__brand{
-        
-      
 
         }
      
@@ -191,20 +224,71 @@ a{
         padding: 0 30px;
       }
     }
-  
 } 
+.topheader{
+    height: 60px;
+    background-color: #444;       
+    position: relative;                
+    line-height: 55px;                 
+    &__left{                           
+    display: flex;
+    justify-content:flex-start;
+    font-weight:bold;
+
+      &--logout{
+        margin-right: 5px;
+        margin-left: 7px;
+      }
+      &--chat{
+        margin-left: 200px;
+        .form_tag{
+          width:600px;
+          height:30px;
+          font-weight:100;
+
+        }
+      }
+    }
+    &__right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size:18px;
+
+    }
+  }
 }
+
 @-webkit-keyframes bg-color {
   0% { background-color: #67bdac; }
   40% { background-color: #ffffff;}
   60% { background-color: #67bdac;  }
-  80% { background-color: #67bdac; }
+  80% { background-color: #ffffff;}
   100% { background-color: #67bdac; }
 }
 @keyframes bg-color {
   0% { background-color: #67bdac; }
   40% { background-color: #ffffff; }
   60% { background-color: #67bdac;  }
-  80% { background-color:   #67bdac; }
+  80% { background-color:   #ffffff; }
   100% { background-color: #67bdac; }
+}
+
+
+@keyframes color-change {
+  0%,100%{
+    color:#ff1493;
+  }
+
+  25%{
+    color:#7fff00;
+  }
+  
+  50%{
+    color:#0091EA;
+  }
+  
+  75%{
+    color:#9400d3;
+  }
 }
