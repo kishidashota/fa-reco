@@ -30,20 +30,34 @@
                   の検索結果
               .search-result-number
                 ="1-#{@products.count}件表示"
-              .search-result-content
-              - @products.each do |product|
-                .product
-                  =link_to room_path(3) do
-                    .product__image
-                      = image_tag product.image.url, class: "figure"
-                    .product__content
-                      .product__content__name
-                        = product.name
-                      %ul.price
-                        %li 
-                          ￥
-                          = product.price
-                          (税込)
-                        %li
+                .search-result-content
+                - @products.each do |product|
+                  .product
+                    - if @shop_ids.include?(product.shop.id)
+                      =link_to room_path(current_user.rooms.find_by(shop_id: @shops.ids)) do
+                        .product__image
+                          = image_tag product.image.url, class: "figure"
+                        .product__content
+                          .product__content__name
+                            = product.name
+                          %ul.price
+                            %li 
+                              ￥
+                              = product.price
+                              (税込)
+                            %li
+                    - else
+                      =link_to "#" do
+                        .product__image
+                          = image_tag product.image.url, class: "figure"
+                        .product__content
+                          .product__content__name
+                            = product.name
+                          %ul.price
+                            %li 
+                              ￥
+                              = product.price
+                              (税込)
+                            %li
 
-          
+              

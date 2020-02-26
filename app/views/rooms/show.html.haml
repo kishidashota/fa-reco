@@ -10,13 +10,11 @@
         .topheader__left--chat
 
         .topheader__right
-          ショップ名
+          = @shop.name
           .topheader__right--user
             
             
     .main
-      %h3 
-        - @shop.name
       .chat-field
         - @shops = Shop.all
         - @messages.each do |m|
@@ -46,12 +44,10 @@
         .topheader__left--chat
           
         .topheader__right
-          ユーザー名
+          = @user.username
           .topheader__right--user
 
     .main
-      %h3
-        - @user.username
       .chat-field
         - @messages.each do |m|
           / メッセージがUserによるものだったら
