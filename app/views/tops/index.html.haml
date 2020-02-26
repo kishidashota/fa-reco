@@ -25,7 +25,6 @@
             %img{src: "shop1.png",height:"16%",width:"88%"}
             %li
             = shop.name
-            %br
             %li
             = shop.genre
             / もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成
@@ -63,14 +62,11 @@
             %img{src: "user1.png",height:"16%",width:"88%"}
             %li
             = user.username
-            %br
             %li
             = user.profile
             / もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成/
             - if @user_ids.include?(user.id)
-              %br/
               = link_to "Chat", room_path(current_shop.rooms.find_by(user_id: user.id))
-              %br/
             - else
               = form_for Room.new do |f|
                 = f.hidden_field :user_id, :value => user.id
