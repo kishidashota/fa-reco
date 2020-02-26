@@ -1,13 +1,24 @@
-.wrapper
-  .header
-    ショップ名
-    .header__left  
-  .main
-    - if user_signed_in?
-      %h3
+- if user_signed_in?
+  .wrapper
+    .topheader
+      .topheader__left
+        .list
+        .topheader__left--logout
+          Back
+          = link_to root_path do
+            = icon('fas','undo-alt')
+        .topheader__left--chat
+
+        .topheader__right
+          ショップ名
+          .topheader__right--user
+            
+            
+    .main
+      %h3 
         - @shop.name
-        ユーザー側
       .chat-field
+        - @shops = Shop.all
         - @messages.each do |m|
           / メッセージがUserによるものだったら
           - if m.is_user
@@ -19,10 +30,28 @@
             / メッセージを左に寄せる
             .left-message
               = m.content
-    - elsif shop_signed_in?
+    .footer
+      = form_for [@room, @message] do |f|
+        = f.text_field :content,class:"text_field"
+        = f.submit "SEND",class: "form__submit",id: "new-message"
+
+- elsif shop_signed_in?
+  .wrapper
+    .topheader
+      .topheader__left
+        .topheader__left--logout
+          Back
+          = link_to root_path do
+            = icon('fas','undo-alt')
+        .topheader__left--chat
+          
+        .topheader__right
+          ユーザー名
+          .topheader__right--user
+
+    .main
       %h3
         - @user.username
-        ショップ側
       .chat-field
         - @messages.each do |m|
           / メッセージがUserによるものだったら
@@ -35,10 +64,10 @@
             / メッセージを右に寄せる
             .right-message
               = m.content
-  .footer
-    = form_for [@room, @message] do |f|
-      = f.text_field :content,class:"text_field"
-      = f.submit "SEND",class: "form__submit",id: "new-message"
+    .footer
+      = form_for [@room, @message] do |f|
+        = f.text_field :content,class:"text_field"
+        = f.submit "SEND",class: "form__submit",id: "new-message"
 
 
       

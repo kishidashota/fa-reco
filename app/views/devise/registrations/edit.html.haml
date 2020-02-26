@@ -1,46 +1,43 @@
 .wrapper
-  .header
+  .topheader
     .header__left
   .main
+    .main__box
+      .new_shop
     %h2
       Edit #{resource_name.to_s.humanize}
     = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
       = render "devise/shared/error_messages", resource: resource
       .field
-        = f.label :username
         %br/
-        = f.text_field :username, autofocus: true
+        = f.text_field :username, autofocus: true ,placeholder:"Username",placeholder:"Email",class: 'input-default'
       .field
-        = f.label :email
         %br/
-        = f.email_field :email, autofocus: true, autocomplete: "email"
+        = f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder:"Email",class: 'input-default'
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
         %div
           Currently waiting confirmation for: #{resource.unconfirmed_email}
       .field
-        = f.label :password
         %i (leave blank if you don't want to change it)
         %br/
-        = f.password_field :password, autocomplete: "new-password"
+        = f.password_field :password, autocomplete: "new-password" ,placeholder:"Password",class: 'input-default'
         - if @minimum_password_length
           %br/
           %em
             = @minimum_password_length
             characters minimum
       .field
-        = f.label :password_confirmation
         %br/
-        = f.password_field :password_confirmation, autocomplete: "new-password"
+        = f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"Password confirmation",class: 'input-default'
       .field
         = f.label :current_password
         %i (we need your current password to confirm your changes)
         %br/
-        = f.password_field :current_password, autocomplete: "current-password"
+        = f.password_field :current_password, autocomplete: "current-password" ,class: 'input-default'
       / アカウント編集時にプロフィールを入力できるようにフォームを追加
       .field
-        = f.label :profile
         %br/
-        = f.text_area :profile, autofocus: true
+        = f.text_area :profile, autofocus: true,placeholder:"Profile"
       .actions
         = f.submit "Update"
     %h3 Cancel my account

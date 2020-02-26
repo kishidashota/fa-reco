@@ -1,0 +1,224 @@
+.wrapper{
+
+  .header{
+    
+    a:hover {
+      color: red;
+    }
+    a{
+      transition: 1.0s ;
+      color:#000;
+      text-decoration: none;
+    }
+    background-color: #F6F6F6;
+    width: auto;
+    height: 50px;
+    position: relative;
+    filter: brightness(300%);
+    .back{
+      .fa-home:before {
+        content: "";
+        position: absolute;
+        left: 28px;
+        top: 24px;
+    }
+    }
+    .sign_up{
+      position: absolute;
+      right:55%;
+      top:20px;
+      margin-right: 1.25rem;
+      height: 2.5rem;
+      width: 7.5rem;
+      padding: 0;
+      border: 1px solid #000;
+      background-color: #fff;
+      color: #000;
+      font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+      font-size: .875rem;
+      line-height: 2.5rem;
+      text-align: center;
+}
+      .sign_in{
+        position: absolute;
+        right:38%;
+        top:20px;
+        margin-right: 1.25rem;
+        height: 2.5rem;
+        width: 7.5rem;
+        padding: 0;
+        background-color: #fff;
+        color: #000;
+        font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 2.5rem;
+        text-align: center;
+}
+      .sign_upfalse{
+        position: absolute;
+        right:55%;
+        top:20px;
+        margin-right: 1.25rem;
+        height: 2.5rem;
+        width: 7.5rem;
+        padding: 0;
+        background-color: #fff;
+        color: #000;
+        font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 14px;
+        font-size: .875rem;
+        line-height: 2.5rem;
+        text-align: center;
+      }
+        .sign_intrue{
+          position: absolute;
+          right:38%;
+          top:20px;
+          margin-right: 1.25rem;
+          height: 2.5rem;
+          width: 7.5rem;
+          padding: 0;
+          border: 1px solid #000;
+          background-color: #fff;
+          color: #000;
+          font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 14px;
+          font-size: .875rem;
+          line-height: 2.5rem;
+          text-align: center;
+      }
+      
+}
+  .main{
+    &__box{
+      position: absolute;
+      right:42%;
+      top:150px;
+      color:#444;
+      .new_shop{
+     
+
+        .field{
+          color: #444;
+          font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+          font-weight: 200;
+          font-style: normal;
+          font-size: 16px;
+          font-size: .875rem;
+          margin-top: 50px;
+        }
+        .actions{
+          margin-top: 50px;
+          margin-left: 15px;
+          .under_btn{
+            border:solid 0px;
+            background-color: #000;
+            color:#444;
+            width:70px;
+            height:50px;
+          }
+          
+          .submit{
+            a:hover {
+              color: red;
+            }
+            a{
+              transition: 1.0s ;
+              color:#000;
+              text-decoration: none;
+            }
+            border: solid 0px;
+            background-color: #000;
+            color: #444;
+            width: 70px;
+            height: 50px;
+            margin:0 100px
+          }
+        }
+          .input-default{
+            width: 300px;
+            height: 30px;
+            color: #000;
+            font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            border:0px;
+            border-bottom:solid #000;
+            border-width:0.1px;
+            padding-bottom:5px;
+          }
+      }
+      .new_user{
+     
+
+        .field{
+          color: #444;
+          font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+          font-weight: 200;
+          font-style: normal;
+          font-size: 16px;
+          font-size: .875rem;
+          margin-top: 50px;
+        }
+        .actions{
+          margin-top: 50px;
+          margin-left: 15px;
+          .under_btn{
+            border:solid 0px;
+            background-color: #000;
+            color:#444;
+            width:70px;
+            height:50px;
+          }
+          
+          .submit{
+            a:hover {
+              color: red;
+            }
+            a{
+              transition: 1.0s ;
+              color:#000;
+              text-decoration: none;
+            }
+            border: solid 0px;
+            background-color: #000;
+            color: #444;
+            width: 70px;
+            height: 50px;
+            margin:0 100px
+          }
+        }
+          .input-default{
+            width: 300px;
+            height: 30px;
+            color: #000;
+            font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            border:0px;
+            border-bottom:solid #000;
+            border-width:0.1px;
+            padding-bottom:5px;
+          }
+      }
+    }
+  }
+}
+
+  

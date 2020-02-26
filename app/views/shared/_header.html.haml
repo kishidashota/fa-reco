@@ -2,29 +2,26 @@
   .header__left
     - if user_signed_in?
       .header__left--logout
-        ログアウト
+        Log out
         = link_to destroy_user_session_path, method: :delete do
           = icon('fas','sign-out-alt')
       .header__left--chat
-        バイヤー
+        Buyer
         = link_to "#" do 
           = icon('fas','comment-alt')
-      
       .header__right
-
         .header__right--user
           = link_to user_path(current_user.id) do
             = icon('fas','smile')
             = current_user.username
     - else
       .header__left--logout
-
       .header__left--chat
-        ログイン
+        Log in
         = link_to new_user_session_path do
           = icon('fas','sign-in-alt')
       .header__left--chat
-        新規登録
+        Sign up
         = link_to new_user_registration_path do 
           = icon('fas','comment-alt')
     

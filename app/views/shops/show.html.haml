@@ -4,5 +4,6 @@
 %p
   メールアドレス : #{@shop.email}
 %p
-  プロフィール : #{@shop.genre}
-
+  ジャンル : #{@shop.genre}
+  = link_to '情報編集ページ' ,edit_shop_registration_path
+  = link_to 'トップページ' ,shop_session_path

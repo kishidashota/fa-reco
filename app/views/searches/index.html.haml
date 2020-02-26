@@ -1,9 +1,17 @@
 .wrapper
-  .header
-    .fuzzy_search
-      = form_tag(searches_path,method: :get) do
-        = text_field_tag :search, "",placeholder:"何かお探しですか？"
-        = submit_tag 'search', :name => nil
+  .topheader
+    .topheader__left
+      .list
+        .topheader__left--logout
+          = link_to root_path do
+            = icon('fas','undo-alt')
+            Back
+      .topheader__left--chat
+        = form_tag(searches_path,method: :get) do
+          = text_field_tag :search, "",placeholder:"What do you want？",class:'form_tag'
+          = submit_tag 'search', :name => nil
+      .topheader__right
+        .topheader__right--user
   .main
     .search
       .search-container
@@ -13,7 +21,7 @@
           %section.items-box-container
             -if @search.length == 0 || @products.length == 0
               %h2.search-result-nil
-                ありません
+                Sorry, not found 
               .items-box-content
             -else
               %h2.search-result-head
@@ -25,7 +33,7 @@
               .search-result-content
               - @products.each do |product|
                 .product
-                  =link_to room_path() do
+                  =link_to room_path(3) do
                     .product__image
                       = image_tag product.image.url, class: "figure"
                     .product__content
