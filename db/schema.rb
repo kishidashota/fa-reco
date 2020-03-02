@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200126131345) do
+ActiveRecord::Schema.define(version: 20200302174852) do
 
   create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "room_id"
@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20200126131345) do
   create_table "shops", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "shop_image",             default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -50,6 +49,7 @@ ActiveRecord::Schema.define(version: 20200126131345) do
     t.string   "genre"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "shop_image"
     t.index ["email"], name: "index_shops_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_shops_on_reset_password_token", unique: true, using: :btree
   end
@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 20200126131345) do
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                default: "", null: false
     t.string   "encrypted_password",                   default: "", null: false
-    t.string   "user_image",                           default: ""
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -65,6 +64,7 @@ ActiveRecord::Schema.define(version: 20200126131345) do
     t.datetime "updated_at",                                        null: false
     t.string   "username"
     t.text     "profile",                limit: 65535
+    t.string   "user_image"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
