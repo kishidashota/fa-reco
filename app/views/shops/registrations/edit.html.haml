@@ -11,6 +11,16 @@
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = render "devise/shared/error_messages", resource: resource
         .field
+          %br/
+          = f.text_field :name ,class: 'input-default',placeholder:"Name"
+        .field
+          %br/
+          = f.text_field :genre ,class: 'input-default',placeholder:"Genre"
+        .field
+          = f.label :image
+          %br/
+          = f.file_field :image
+        .field
           = f.label :email
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email" ,class: 'input-default'

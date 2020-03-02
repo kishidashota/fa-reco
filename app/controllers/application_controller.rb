@@ -5,12 +5,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    
   
     if resource_class == User
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :profile])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :profile ,:image])
     elsif resource_class == Shop
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :genre])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :genre ,:image])
     else
       super
     end

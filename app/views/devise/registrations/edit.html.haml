@@ -14,6 +14,10 @@
           %br/
           = f.text_field :username, autofocus: true ,placeholder:"Username",placeholder:"Email",class: 'input-default'
         .field
+          = f.label :image
+          %br/
+          = f.file_field :image
+        .field
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder:"Email",class: 'input-default'
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?

@@ -21,10 +21,15 @@
         .field
           %br/
           = f.password_field :password, autocomplete: "new-password", placeholder:"Password (6 characters minimum)",class: 'input-default'
-
         .field
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password_confirmation",class: 'input-default'
+        .field
+          = f.label :image
+          %br/
+          = f.file_field :image
         .actions
           = f.submit "Sign up",class:"submit"
+      
+
 
