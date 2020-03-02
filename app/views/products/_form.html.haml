@@ -1,7 +1,13 @@
 .wrapper
   .topheader
-  .main
-    .main__box
+    .topheader__left--logout
+      = link_to root_path do
+        = icon('fas','undo-alt')
+        Back
+    .topheader__title
+      Product_registration
+  .main-products
+    .main-products__box
       = form_for(@product) do |f|
         - if @product.errors.any?
           #error_explanation
@@ -23,10 +29,10 @@
             .thumbnail
               = image_tag @product.image.url
           %br/
-          = f.label :image
+          = f.label :image ,placeholder:"Image"
           %br/
           = f.file_field :image
-          = f.hidden_field :image_cache
+          = f.hidden_field :image_cache 
         .field
           / 既存レコード(DBに保存されている)かつ、画像が存在する場合
           - if @product.persisted? && @product.image?
@@ -35,4 +41,4 @@
               画像を削除
         / 追加箇所 終了
         .actions
-          = f.submit
+          = f.submit class:"submit"

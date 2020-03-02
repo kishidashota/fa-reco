@@ -1,3 +1,75 @@
-img {
-  width: 100px;
+.wrapper{
+  .topheader{
+    &__title{
+      color: #ffffff;
+      text-align: center;
+    }
+
+    }
+  }
+  .main-products{
+    width: 100%;
+    
+    &__box{
+      max-width: 300px;
+      margin: 0 auto; 
+     
+
+      .new_product{
+        width:100vh;
+        .field{
+          color: #444;
+          font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+          font-weight: 200;
+          font-style: normal;
+          font-size: 16px;
+          font-size: .875rem;
+          margin-top: 50px;
+
+        }
+        .actions{
+
+          .submit{
+            cursor: pointer;
+            position: absolute;
+            right: 44%;
+            margin-right: 1.25rem;
+            height: 2.5rem;
+            width: 7.5rem;
+            padding: 0;
+            border: 1px solid #000;
+            background-color: #fff;
+            color: #000;
+            font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            text-align: center;
+        
+            
+          }
+        }
+
+          .input-default{
+            width: 300px;
+            height: 30px;
+            color: #000;
+            font-family: 'VSCO Gothic Medium', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            border:0px;
+            border-bottom:solid #000;
+            border-width:0.1px;
+            padding-bottom:5px;
+          }
+      }
+
+  }
 }
+
+

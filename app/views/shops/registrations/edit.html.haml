@@ -1,10 +1,13 @@
 .wrapper
-  .header
-    .header__left  
-  .main
-    .main__box
-      %h2
-        Edit #{resource_name.to_s.humanize}
+  .topheader
+    .topheader__left
+      .list
+      .topheader__left--logout
+        = link_to root_path do
+          = icon('fas','undo-alt')
+          Back  
+  .main-edition
+    .main-edition__box
       = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
         = render "devise/shared/error_messages", resource: resource
         .field
