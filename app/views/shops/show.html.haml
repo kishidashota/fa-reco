@@ -1,9 +1,20 @@
-%h1 Users#show
-%p
-  名前 : #{@shop.name}
-%p
-  メールアドレス : #{@shop.email}
-%p
-  ジャンル : #{@shop.genre}
-  = link_to '情報編集ページ' ,edit_shop_registration_path
-  = link_to 'トップページ' ,shop_session_path
+.wrapper
+  .topheader
+    .topheader__left--logout
+      = link_to root_path do
+        = icon('fas','undo-alt')
+        Back
+  .main
+    .main__profile
+      .main_img
+      .main_name
+        #{@shop.name}
+      .main_email
+        #{@shop.email}
+      .main_profile
+        #{@shop.genre}
+    .main__edition
+      = link_to edit_shop_registration_path do
+        = icon('fas','cogs')
+        Edition
+

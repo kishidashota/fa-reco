@@ -245,8 +245,16 @@ a{
           width:600px;
           height:30px;
           font-weight:100;
-
         }
+          .submit{
+            cursor: pointer;
+            width: 100px;
+            height: 32px;
+            color: #444;
+            background:yellowgreen;
+          }
+
+        
       }
     }
     &__right{

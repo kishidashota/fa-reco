@@ -23,12 +23,12 @@
           = f.password_field :password_confirmation, autocomplete: "new-password" ,placeholder:"Password_confirmation",class: 'input-default'
         .field
           %br/
-          = f.text_field :name ,class: 'input-default',placeholder:"name"
+          = f.text_field :name ,class: 'input-default',placeholder:"Name"
         .field
           %br/
-          = f.text_field :genre ,class: 'input-default',placeholder:"genre"
+          = f.text_field :genre ,class: 'input-default',placeholder:"Genre"
         .actions
-          = f.submit "Sign up",class:"under_btn"
+          = f.submit "Sign up",class:"submit"
       = render "shops/shared/links"
 
 

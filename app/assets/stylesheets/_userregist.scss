@@ -102,8 +102,8 @@
   .main{
     &__box{
       position: absolute;
-      right:42%;
-      top:150px;
+      right:40%;
+      top:100px;
       color:#444;
       .new_shop{
      
@@ -129,20 +129,22 @@
           }
           
           .submit{
-            a:hover {
-              color: red;
-            }
-            a{
-              transition: 1.0s ;
-              color:#000;
-              text-decoration: none;
-            }
-            border: solid 0px;
-            background-color: #000;
-            color: #444;
-            width: 70px;
-            height: 50px;
-            margin:0 100px
+            cursor: pointer;
+            margin: 0 100px;
+            margin-right: 1.25rem;
+            height: 2.5rem;
+            width: 7.5rem;
+            padding: 0;
+            background-color: #111;
+            color: #ffffff;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            text-align: center;
+            border: radius;
+            border-radius: 5px;
           }
         }
           .input-default{
@@ -185,20 +187,22 @@
           }
           
           .submit{
-            a:hover {
-              color: red;
-            }
-            a{
-              transition: 1.0s ;
-              color:#000;
-              text-decoration: none;
-            }
-            border: solid 0px;
-            background-color: #000;
-            color: #444;
-            width: 70px;
-            height: 50px;
-            margin:0 100px
+            cursor: pointer;
+            margin: 0 75px;
+            margin-right: 1.25rem;
+            height: 2.5rem;
+            width: 7.5rem;
+            padding: 0;
+            background-color: #111;
+            color: #ffffff;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 14px;
+            font-size: .875rem;
+            line-height: 2.5rem;
+            text-align: center;
+            border: radius;
+            border-radius: 5px;
           }
         }
           .input-default{

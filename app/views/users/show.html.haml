@@ -1,10 +1,13 @@
 .wrapper
   .topheader
+    .topheader__left--logout
+      = link_to root_path do
+        = icon('fas','undo-alt')
+        Back
   .main
-    .main__box__edition
-      ((個人情報))
+    .main__profile
+      .main_img
       .main_name
-        ユーザー名 :
         = @user.username
       .main_email
         メールアドレス :
@@ -12,6 +15,8 @@
       .main_profile
         プロフィール :
         = @user.profile
-      
-      = link_to '情報編集ページ' ,edit_user_registration_path
-      = link_to 'トップページ' ,user_session_path
+    .main__edition
+      = link_to edit_user_registration_path do
+        = icon('fas','cogs')
+        Edition
+

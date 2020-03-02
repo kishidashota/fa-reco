@@ -3,9 +3,36 @@
 
   }
   .main{
-    .main__box__edition{
-      background-color: yellowgreen;
+    &__profile{
+
+      margin-top: 50px;
+      height: 400px;
+      width: 600px;
+      .main_img{
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+      }
+      .main_name{
+        text-align: center;
+        height: 50px;
+      }
+    .main_email{
+      text-align: center;
+      height: 40px;
     }
+    .main_profile{
+      text-align: center;
+    }
+  }
+  &__edition{
+    a{
+      color: #111;
+    }
+    color: yellowgreen;
+    
+  }
   }
 }
 
