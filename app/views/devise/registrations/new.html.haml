@@ -25,9 +25,9 @@
           %br/
           = f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Password_confirmation",class: 'input-default'
         .field
-          = f.label :image
+          = f.label :user_image
           %br/
-          = f.file_field :image ,autocomplete: "image"
+          = f.file_field :user_image ,autocomplete: "user_image"
         .actions
           = f.submit "Sign up",class:"submit"
       
