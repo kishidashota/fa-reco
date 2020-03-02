@@ -18,7 +18,7 @@
         .field
           = f.label :image
           %br/
-          = f.image_field :image ,autocomplete: "image"
+          = f.file_field :image ,autocomplete: "image"
         .field
           %br/
           = f.email_field :email, autofocus: true, autocomplete: "email" ,placeholder:"Email",class: 'input-default'
