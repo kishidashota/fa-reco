@@ -7,7 +7,7 @@
   .main
     .main__profile
       .main_img
-        = image_tag @shop.shop_image.url,size:'100x100'
+        = image_tag @shop.shop_image.url,size:'100x100',class:"img_tag"
       .main_name
         #{@shop.name}
       .main_email
