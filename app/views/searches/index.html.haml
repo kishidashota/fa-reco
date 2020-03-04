@@ -9,7 +9,7 @@
       .topheader__left--chat
         = form_tag(searches_path,method: :get) do
           = text_field_tag :search, "",placeholder:"What do you want？",class:'form_tag'
-          = submit_tag '', :name => nil
+            = submit_tag '', :name => nil
             = icon('fas','fa-serach')
       .topheader__right
         .topheader__right--user
