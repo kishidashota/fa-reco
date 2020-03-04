@@ -1,8 +1,6 @@
 class TopsController < ApplicationController
   def index
-      @user = User.find(params[:id])
-      @shop = Shop.find(params[:id]) 
-      
+
     if user_signed_in?
       @shops = Shop.all
       rooms = current_user.rooms
