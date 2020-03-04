@@ -22,7 +22,7 @@
       .members
         - @shops.each do |shop|
           %ul.profile
-            = image_tag @shop.shop_image.url,size:'100x100',class:"img_tag"
+            = image_tag shop.shop_image.url,size:'100x100',class:"img_tag"
             %li
             = shop.name
             %li
@@ -59,7 +59,7 @@
       .members
         - @users.each do |user|
           %ul.profile
-            = image_tag @user.user_image.url,size:'100x100',class:"img_tag"
+            = image_tag user.user_image.url,size:'100x100',class:"img_tag"
             %li
             = user.username
             %li
