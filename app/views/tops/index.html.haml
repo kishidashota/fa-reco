@@ -10,7 +10,8 @@
         .topheader__left--chat
           = form_tag(searches_path,method: :get) do
             = text_field_tag :search, "",placeholder:"What do you want？",class:'form_tag'
-            = submit_tag 'SERARCH', :name => nil ,class:"submit"
+            = submit_tag '', :name => nil ,class:"submit"
+              = icon('fas','fa-serach')
         .topheader__right
           .topheader__right--user
             = link_to user_path(current_user.id) do
