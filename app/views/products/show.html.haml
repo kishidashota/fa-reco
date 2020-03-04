@@ -1,17 +1,20 @@
-%p#notice= notice
-%p
-  %strong Name:
-  = @product.name
-%p
-  %strong Price:
-  = @product.price
-/ 追加箇所 開始
-%p
-  %strong Image:
-  - if @product.image?
-    .thumbnail
-      = image_tag @product.image.url
-/ 追加箇所 終了
-= link_to 'Edit', edit_product_path(@product)
-|
-= link_to 'Back', products_path
+.wrapper
+  .topheader
+  .main-product
+    %p#notice= notice
+    %p
+      %strong Name:
+      = @product.name
+    %p
+      %strong Price:
+      = @product.price
+    / 追加箇所 開始
+    %p
+      %strong Image:
+      - if @product.image?
+        .thumbnail
+          = image_tag @product.image.url ,size:'100x100'
+    / 追加箇所 終了
+    = link_to 'Edit', edit_product_path(@product)
+    |
+    = link_to 'Back', products_path
