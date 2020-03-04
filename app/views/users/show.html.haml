@@ -8,7 +8,7 @@
     .main__profile
       .main_img
         プロフィール :
-        = image_tag @user.user_image.url
+        = image_tag @user.user_image.url,size:'100x100'
       .main_name
         = @user.username
       .main_email

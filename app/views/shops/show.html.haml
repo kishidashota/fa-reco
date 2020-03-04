@@ -14,7 +14,7 @@
       .main_profile
         #{@shop.genre}
       .main_profile
-        = image_tag @shop.shop_image.url
+        = image_tag @shop.shop_image.url,size:'100x100'
     .main__edition
       = link_to edit_shop_registration_path do
         = icon('fas','cogs')
