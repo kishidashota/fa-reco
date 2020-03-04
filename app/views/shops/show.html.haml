@@ -7,14 +7,14 @@
   .main
     .main__profile
       .main_img
+        = image_tag @shop.shop_image.url,size:'100x100'
       .main_name
         #{@shop.name}
       .main_email
         #{@shop.email}
       .main_profile
         #{@shop.genre}
-      .main_profile
-        = image_tag @shop.shop_image.url,size:'100x100'
+
     .main__edition
       = link_to edit_shop_registration_path do
         = icon('fas','cogs')
