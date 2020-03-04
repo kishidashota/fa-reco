@@ -42,12 +42,12 @@
     .topheader
       .topheader__left
         .topheader__left--logout
-        = link_to destroy_user_session_path, method: :delete do 
-          = icon('fas','sign-out-alt')
-          Logout
+          = link_to destroy_user_session_path, method: :delete do 
+            = icon('fas','sign-out-alt')
+            Logout
         .topheader__left--icon
-        = link_to new_product_path do          
-          = icon('fas','comment-alt')
+          = link_to new_product_path do          
+            = icon('fas','comment-alt')
           Products
         .topheader__right
           .topheader__right--user
