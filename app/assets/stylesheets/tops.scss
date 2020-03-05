@@ -66,7 +66,7 @@ a{
       &__description{
         float: right;
         color: white;
-        padding-right: 50px;
+        padding-right: 300px;
       }
       }
       &__shop{
@@ -94,7 +94,7 @@ a{
         &__recommend{
           float: right;
           color: #67bdac;
-          padding-right: 30px;
+          padding-right: 300px;
         }
       }
      
@@ -245,6 +245,7 @@ a{
           width:600px;
           height:30px;
           font-weight:100;
+          margin-top: 14px;
         }
           .btn_search{
             position: absolute;
@@ -268,8 +269,15 @@ a{
       top: 0;
       right: 0;
       font-size:18px;
-
+      &--name{
+        position: absolute;
+        top: 2px;
+        right: 8px;
+        font-size: 18px;
+        color:aquamarine;
+      }
     }
+
   }
 }
 
