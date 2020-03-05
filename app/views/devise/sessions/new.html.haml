@@ -24,5 +24,9 @@
             = f.label :remember_me
         .actions
           = f.submit "Log in",class:"submit"
+          = form_for(:session, url: new_user_session_path ) do |f|
+            = f.hidden_field :email, value: 'b1@gmail.com'
+            = f.hidden_field :password, value: '111111'
+            = f.submit 'テストログイン',class: "user-log-in"
           
           
