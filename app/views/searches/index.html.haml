@@ -2,17 +2,17 @@
   .topheader
     .topheader__left
       .list
-        .topheader__left--logout
-          = link_to root_path do
-            = icon('fas','undo-alt')
-            Back
-        .topheader__left--chat
-          = form_tag(searches_path,method: :get) do
-            = text_field_tag :search, "",placeholder:"What do you want？",class:'form_tag'
-            = button_tag type: 'submit', class: 'btn_search' do
-              = icon('fas','search')
-        .topheader__right
-          .topheader__right--user
+      .topheader__left--logout
+        = link_to root_path do
+          = icon('fas','undo-alt')
+          Back
+      .topheader__left--chat
+        = form_tag(searches_path,method: :get) do
+          = text_field_tag :search, "",placeholder:"What do you want？",class:'form_tag'
+          = button_tag type: 'submit', class: 'btn_search' do
+            = icon('fas','search')
+      .topheader__right
+        .topheader__right--user
   .main
     .search
       .search-container
