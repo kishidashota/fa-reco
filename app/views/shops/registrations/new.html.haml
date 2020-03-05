@@ -33,6 +33,10 @@
           = f.text_field :genre ,class: 'input-default',placeholder:"Genre"
         .actions
           = f.submit "Sign up",class:"submit"
-      = render "shops/shared/links"
-
+ 
+          = form_for(:session, url: new_shop_session_path) do |f|
+            = f.hidden_field :email, value: 'marni@gmail.com'
+            = f.hidden_field :password, value: '111111'
+            = f.submit 'テストログイン',class: "user-log-in"
+        = render "shops/shared/links"
 
