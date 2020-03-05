@@ -118,12 +118,14 @@ a{
 
     a{
       animation: color-change 2s linear infinite;
+      text-align: center;
     }
   
 
     .profile{
       width: 22%;
-      display: inline-block; 
+      display: inline-block;
+      text-align: center;
   }
     
   }

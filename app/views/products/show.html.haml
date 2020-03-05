@@ -1,5 +1,9 @@
 .wrapper
   .topheader
+    .topheader__left--logout
+      = link_to root_path do
+        = icon('fas','undo-alt')
+        Back
   .main-products
     .main-products__box
       %p#notice= notice

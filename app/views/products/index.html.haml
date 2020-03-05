@@ -1,11 +1,13 @@
 .wrapper
   .topheader
+    .topheader__left--logout
+      = link_to root_path do
+        = icon('fas','undo-alt')
+        Back
     .topheader__title
       Product inventory management
 
   .main-products__management     
-    = link_to '新商品登録', new_product_path
-    = link_to 'マイページへ戻る', shop_session_path
     %table
       %tr
         %th 商品名 
