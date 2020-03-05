@@ -246,12 +246,13 @@ a{
           height:30px;
           font-weight:100;
         }
-          .submit{
+          .btn_search{
             cursor: pointer;
             width: 100px;
             height: 32px;
-            color: #444;
-            background:yellowgreen;
+            border: 1px solid #000;
+            background-color: #fff;
+            color: #000;
           }
 
         
