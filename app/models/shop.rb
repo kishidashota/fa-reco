@@ -8,4 +8,6 @@ class Shop < ApplicationRecord
   has_many :rooms
   has_many :products, dependent: :destroy
   validates :name, presence: true
+  validates :genre, presence: true
+  validates :shop_image, presence: true
 end
