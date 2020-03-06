@@ -7,13 +7,13 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
   
     if resource_class == User
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :profile ,:user_image])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:username,:user_image])
     elsif resource_class == Shop
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :genre ,:shop_image])
     else
       super
     end
-    # アカウント編集の時にnameとprofileのストロングパラメータを追加
+    # アカウント編集の時にusernameとprofileのストロングパラメータを追加
     devise_parameter_sanitizer.permit(:account_update, keys: [:username, :profile])
   end
   # def current_shop

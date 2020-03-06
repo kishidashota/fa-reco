@@ -1,8 +1,4 @@
-
 Rails.application.routes.draw do
-  
-
-
   root 'tops#index'
   devise_for :shops, controllers: {registrations: 'shops/registrations'}
   devise_for :users, controllers: {registrations: 'users/registrations' }
